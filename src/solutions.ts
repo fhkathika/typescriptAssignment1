@@ -23,14 +23,15 @@ console.log(reverseString("kathika"))
 type StringOrNumber=string|number
 function checkType(val:StringOrNumber){
     if(typeof(val)=== 'string'){
- console.log("String")
+ return "String"
     }
     else if(typeof(val)=== 'number'){
-        console.log("Number") 
+        return "Number"
     }
    
 }
-checkType('56')
+console.log(checkType('56'))
+
 
 // problem 4
 // Write a generic function getProperty that takes an object and a key, then returns the value of that key. Use constraints to ensure the key exists on the object
@@ -56,11 +57,11 @@ interface Book{
 }
 
 
-interface readBook extends Book{
+interface ReadBook extends Book{
     isRead: boolean; 
 }
 
-const toggleReadStatus=(book:Book):readBook=>{
+const toggleReadStatus=(book:Book):ReadBook=>{
 return {...book,isRead:true}
 }
 console.log(toggleReadStatus({
